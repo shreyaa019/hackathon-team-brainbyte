@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MYSURU RAILWAY JUNCTION SMART NAVIGATION SYSTEM
+   RAMANAGARA RAILWAY JUNCTION SMART NAVIGATION SYSTEM
    Multilingual, Accessible, Interactive Station Indoor Guide & Reroute Engine
    ========================================================================== */
 
@@ -8,15 +8,15 @@
 // --------------------------------------------------------------------------
 const i18n = {
   en: {
-    appTitle: "Mysuru Junction Smart Navigation",
-    appSubtitle: "Mysuru Junction (MYS) • Indian Railways",
+    appTitle: "Ramanagara Junction Smart Navigation",
+    appSubtitle: "Ramanagara Junction (RMGM) • Indian Railways",
     disclaimerBadge: "DEMO PROTOTYPE",
     disclaimerText: "Conceptual station map. Facility positions and routes require on-site verification.",
     tabHome: "Home",
     tabMap: "Navigation & Map",
     tabFacilities: "Nearby Facilities",
     tabHelp: "Staff Assistance",
-    welcomeHeading: "Welcome to Mysuru Junction Smart Navigation",
+    welcomeHeading: "Welcome to Ramanagara Junction Smart Navigation",
     heroDesc: "An accessible indoor navigation portal helping all passengers—including users with physical, visual, or hearing disabilities—navigate between platforms, concourses, ticket counters, and station facilities.",
     btnStartNav: "Start Navigation",
     btnFacilities: "Find Nearby Facilities",
@@ -49,7 +49,7 @@ const i18n = {
     startNavAction: "Start Navigation",
     cancelNavAction: "Cancel Navigation",
     facilitiesHeading: "Station Facilities & Amenities",
-    facilitiesSub: "Browse verified and demonstration amenities across Mysuru Junction. Select any facility to navigate directly to it.",
+    facilitiesSub: "Browse verified and demonstration amenities across Ramanagara Junction. Select any facility to navigate directly to it.",
     searchPlaceholder: "Search facilities (e.g., Washroom, Water, Ticket)...",
     helpHeading: "Request Passenger Assistance",
     helpFormDesc: "Passengers requiring wheelchair escort, visual assistance, or general station support can request immediate help here.",
@@ -57,15 +57,15 @@ const i18n = {
     navigateHere: "Navigate Here"
   },
   kn: {
-    appTitle: "ಮೈಸೂರು ಜಂಕ್ಷನ್ ಸ್ಮಾರ್ಟ್ ನ್ಯಾವಿಗೇಷನ್",
-    appSubtitle: "ಮೈಸೂರು ಜಂಕ್ಷನ್ (MYS) • ಭಾರತೀಯ ರೈಲ್ವೆ",
+    appTitle: "ರಾಮನಗರ ಜಂಕ್ಷನ್ ಸ್ಮಾರ್ಟ್ ನ್ಯಾವಿಗೇಷನ್",
+    appSubtitle: "ರಾಮನಗರ ಜಂಕ್ಷನ್ (RMGM) • ಭಾರತೀಯ ರೈಲ್ವೆ",
     disclaimerBadge: "ಡೆಮೊ ಮಾದರಿ",
     disclaimerText: "ಸ್ಥಳ ಪರಿಶೀಲನೆ ಅಗತ್ಯವಿರುವ ನಿಲ್ದಾಣದ ಪ್ರದರ್ಶನ ನಕ್ಷೆ.",
     tabHome: "ಮುಖ್ಯ ಪುಟ",
     tabMap: "ನ್ಯಾವಿಗೇಷನ್ ಮತ್ತು ನಕ್ಷೆ",
     tabFacilities: "ಸೌಲಭ್ಯಗಳು",
     tabHelp: "ಸಿಬ್ಬಂದಿ ನೆರವು",
-    welcomeHeading: "ಮೈಸೂರು ಜಂಕ್ಷನ್ ಸ್ಮಾರ್ಟ್ ನ್ಯಾವಿಗೇಷನ್‌ಗೆ ಸುಸ್ವಾಗತ",
+    welcomeHeading: "ರಾಮನಗರ ಜಂಕ್ಷನ್ ಸ್ಮಾರ್ಟ್ ನ್ಯಾವಿಗೇಷನ್‌ಗೆ ಸುಸ್ವಾಗತ",
     heroDesc: "ಪ್ಲಾಟ್‌ಫಾರ್ಮ್‌ಗಳು, ಟಿಕೆಟ್ ಕೌಂಟರ್‌ಗಳು ಮತ್ತು ಸೌಲಭ್ಯಗಳ ನಡುವೆ ಸುರಕ್ಷಿತವಾಗಿ ಸಂಚರಿಸಲು ಎಲ್ಲಾ ಪ್ರಯಾಣಿಕರಿಗೆ ನೆರವಾಗುವ ನ್ಯಾವಿಗೇಷನ್ ವ್ಯವಸ್ಥೆ.",
     btnStartNav: "ನ್ಯಾವಿಗೇಷನ್ ಪ್ರಾರಂಭಿಸಿ",
     btnFacilities: "ಸೌಲಭ್ಯಗಳನ್ನು ಹುಡುಕಿ",
@@ -98,7 +98,7 @@ const i18n = {
     startNavAction: "ನ್ಯಾವಿಗೇಷನ್ ಪ್ರಾರಂಭಿಸಿ",
     cancelNavAction: "ರದ್ದುಮಾಡಿ",
     facilitiesHeading: "ನಿಲ್ದಾಣದ ಸೌಲಭ್ಯಗಳು",
-    facilitiesSub: "ಮೈಸೂರು ಜಂಕ್ಷನ್‌ನಲ್ಲಿ ಲಭ್ಯವಿರುವ ಸೌಲಭ್ಯಗಳನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ನೇರವಾಗಿ ಮಾರ್ಗವನ್ನು ಕಂಡುಕೊಳ್ಳಿ.",
+    facilitiesSub: "ರಾಮನಗರ ಜಂಕ್ಷನ್‌ನಲ್ಲಿ ಲಭ್ಯವಿರುವ ಸೌಲಭ್ಯಗಳನ್ನು ವೀಕ್ಷಿಸಿ ಮತ್ತು ನೇರವಾಗಿ ಮಾರ್ಗವನ್ನು ಕಂಡುಕೊಳ್ಳಿ.",
     searchPlaceholder: "ಸೌಲಭ್ಯಗಳನ್ನು ಹುಡುಕಿ (ಉದಾ: ಶೌಚಾಲಯ, ಕುಡಿಯುವ ನೀರು)...",
     helpHeading: "ಪ್ರಯಾಣಿಕರ ನೆರವು ಕೋರಿ",
     helpFormDesc: "ವೀಲ್‌ಚೇರ್ ಅಥವಾ ದೃಷ್ಟಿ ನೆರವು ಅಗತ್ಯವಿರುವ ಪ್ರಯಾಣಿಕರು ಇಲ್ಲಿ ವಿನಂತಿಸಬಹುದು.",
@@ -106,15 +106,15 @@ const i18n = {
     navigateHere: "ಇಲ್ಲಿಗೆ ಮಾರ್ಗ ತೋರಿಸಿ"
   },
   ta: {
-    appTitle: "மைசூர் சந்திப்பு ஸ்மார்ட் வழிகாட்டி",
-    appSubtitle: "மைசூர் சந்திப்பு (MYS) • இந்திய இரயில்வே",
+    appTitle: "இராமநகரம் சந்திப்பு ஸ்மார்ட் வழிகாட்டி",
+    appSubtitle: "இராமநகரம் சந்திப்பு (RMGM) • இந்திய இரயில்வே",
     disclaimerBadge: "டெமோ மாதிரி",
     disclaimerText: "நிலையத்தின் உத்தேச வரைபடம். நேரடி சரிபார்ப்பு தேவை.",
     tabHome: "முகப்பு",
     tabMap: "வழிகாட்டி & வரைபடம்",
     tabFacilities: "வசதிகள்",
     tabHelp: "உதவி",
-    welcomeHeading: "மைசூர் சந்திப்பு ஸ்மார்ட் வழிகாட்டிக்கு வரவேற்கிறோம்",
+    welcomeHeading: "இராமநகரம் சந்திப்பு ஸ்மார்ட் வழிகாட்டிக்கு வரவேற்கிறோம்",
     heroDesc: "அனைத்து பயணிகளும் தளங்கள் மற்றும் வசதிகளுக்கு இடையே எளிதாக பயணிக்க உதவும் வழிகாட்டி அமைப்பு.",
     btnStartNav: "வழிகாட்டியைத் தொடங்கு",
     btnFacilities: "வசதிகளைக் கண்டறி",
@@ -147,7 +147,7 @@ const i18n = {
     startNavAction: "வழிகாட்டியைத் தொடங்கு",
     cancelNavAction: "ரத்து செய்",
     facilitiesHeading: "நிலைய வசதிகள்",
-    facilitiesSub: "மைசூர் சந்திப்பில் உள்ள வசதிகளைப் பார்த்து நேரடியாகச் செல்லுங்கள்.",
+    facilitiesSub: "இராமநகரம் சந்திப்பில் உள்ள வசதிகளைப் பார்த்து நேரடியாகச் செல்லுங்கள்.",
     searchPlaceholder: "வசதிகளைத் தேடுங்கள் (எ.கா. கழிப்பறை, நீர்)...",
     helpHeading: "உதவி கோரிக்கை",
     helpFormDesc: "உதவி தேவைப்படும் பயணிகள் இங்கு கோரிக்கை வைக்கலாம்.",
@@ -155,15 +155,15 @@ const i18n = {
     navigateHere: "இங்கே செல்"
   },
   te: {
-    appTitle: "మైసూర్ జంక్షన్ స్మార్ట్ నావిగేషన్",
-    appSubtitle: "మైసూర్ జంక్షన్ (MYS) • ఇండియన్ రైల్వేస్",
+    appTitle: "రామనగరం జంక్షన్ స్మార్ట్ నావిగేషన్",
+    appSubtitle: "రామనగరం జంక్షన్ (RMGM) • ఇండియన్ రైల్వేస్",
     disclaimerBadge: "డెమో ప్రోటోటైప్",
     disclaimerText: "స్టేషన్ మ్యాప్ నమూనా. ప్రత్యక్ష పరిశీలన అవసరం.",
     tabHome: "హోమ్",
     tabMap: "నావిగేషన్ & మ్యాప్",
     tabFacilities: "సదుపాయాలు",
     tabHelp: "సహాయం",
-    welcomeHeading: "మైసూర్ జంక్షన్ నావిగేషన్‌కు స్వాగతం",
+    welcomeHeading: "రామనగరం జంక్షన్ నావిగేషన్‌కు స్వాగతం",
     heroDesc: "ప్రయాణికులందరికీ ప్లాట్‌ఫారమ్‌లు మరియు సౌకర్యాల మధ్య సులభంగా నావిగేట్ చేయడానికి సహాయపడే సిస్టమ్.",
     btnStartNav: "నావిగేషన్ ప్రారంభించండి",
     btnFacilities: "సౌకర్యాలను కనుగొనండి",
@@ -196,7 +196,7 @@ const i18n = {
     startNavAction: "ప్రారంభించండి",
     cancelNavAction: "రద్దు చేయి",
     facilitiesHeading: "స్టేషన్ సౌకర్యాలు",
-    facilitiesSub: "మైసూర్ జంక్షన్‌లోని సౌకర్యాలను చూడండి.",
+    facilitiesSub: "రామనగరం జంక్షన్‌లోని సౌకర్యాలను చూడండి.",
     searchPlaceholder: "సౌకర్యాలను శోధించండి...",
     helpHeading: "సహాయం అభ్యర్థించండి",
     helpFormDesc: "సహాయం కావలసిన ప్రయాణికులు ఇక్కడ అభ్యర్థించవచ్చు.",
@@ -204,15 +204,15 @@ const i18n = {
     navigateHere: "ఇక్కడకు మార్గం"
   },
   ml: {
-    appTitle: "മൈസൂരു ജംഗ്ഷൻ സ്മാർട്ട് നാവിഗേഷൻ",
-    appSubtitle: "മൈസൂരു ജംഗ്ഷൻ (MYS) • ഇന്ത്യൻ റെയിൽവേ",
+    appTitle: "രാമനഗരം ജംഗ്ഷൻ സ്മാർട്ട് നാവിഗേഷൻ",
+    appSubtitle: "രാമനഗരം ജംഗ്ഷൻ (RMGM) • ഇന്ത്യൻ റെയിൽവേ",
     disclaimerBadge: "ഡെമോ മാതൃക",
     disclaimerText: "സ്റ്റേഷൻ മാപ്പ് മാതൃക. നേരിട്ടുള്ള പരിശോധന ആവശ്യമാണ്.",
     tabHome: "ഹോം",
     tabMap: "നാവിഗേഷൻ & മാപ്പ്",
     tabFacilities: "സൗകര്യങ്ങൾ",
     tabHelp: "സഹായം",
-    welcomeHeading: "മൈസൂരു ജംഗ്ഷൻ നാവിഗേഷനിലേക്ക് സ്വാഗതം",
+    welcomeHeading: "രാമനഗരം ജംഗ്ഷൻ നാവിഗേഷനിലേക്ക് സ്വാഗതം",
     heroDesc: "എല്ലാ യാത്രക്കാർക്കും പ്ലാറ്റ്‌ഫോമുകൾക്കിടയിൽ എളുപ്പത്തിൽ സഞ്ചരിക്കാൻ സഹായിക്കുന്ന സംവിധാനം.",
     btnStartNav: "നാവിഗേഷൻ ആരംഭിക്കുക",
     btnFacilities: "സൗകര്യങ്ങൾ കണ്ടെത്തുക",
@@ -245,7 +245,7 @@ const i18n = {
     startNavAction: "ആരംഭിക്കുക",
     cancelNavAction: "റദ്ദാക്കുക",
     facilitiesHeading: "സ്റ്റേഷൻ സൗകര്യങ്ങൾ",
-    facilitiesSub: "മൈസൂരു ജംഗ്ഷനിലെ സൗകര്യങ്ങൾ കാണുക.",
+    facilitiesSub: "രാമനഗരം ജംഗ്ഷനിലെ സൗകര്യങ്ങൾ കാണുക.",
     searchPlaceholder: "സൗകര്യങ്ങൾ തിരയുക...",
     helpHeading: "സഹായം ആവശ്യപ്പെടുക",
     helpFormDesc: "സഹായം ആവശ്യമുള്ള യാത്രക്കാർക്ക് ഇവിടെ അപേക്ഷിക്കാം.",
@@ -253,15 +253,15 @@ const i18n = {
     navigateHere: "ഇവിടേക്ക് പോവുക"
   },
   hi: {
-    appTitle: "मैसूरु जंक्शन स्मार्ट नेविगेशन",
-    appSubtitle: "मैसूरु जंक्शन (MYS) • भारतीय रेल",
+    appTitle: "रामनगरम जंक्शन स्मार्ट नेविगेशन",
+    appSubtitle: "रामनगरम जंक्शन (RMGM) • भारतीय रेल",
     disclaimerBadge: "डेमो मॉडल",
     disclaimerText: "स्टेशन का काल्पनिक मानचित्र। स्थान सत्यापन आवश्यक है।",
     tabHome: "मुख्य पृष्ठ",
     tabMap: "नेविगेशन और मानचित्र",
     tabFacilities: "सुविधाएं",
     tabHelp: "कर्मचारी सहायता",
-    welcomeHeading: "मैसूरु जंक्शन स्मार्ट नेविगेशन में आपका स्वागत है",
+    welcomeHeading: "रामनगरम जंक्शन स्मार्ट नेविगेशन में आपका स्वागत है",
     heroDesc: "सभी यात्रियों को प्लेटफॉर्मों, टिकट काउंटरों और सुविधाओं के बीच सुगम नेविगेशन प्रदान करने वाला सुलभ पोर्टल।",
     btnStartNav: "नेविगेशन शुरू करें",
     btnFacilities: "सुविधाएं खोजें",
@@ -294,7 +294,7 @@ const i18n = {
     startNavAction: "नेविगेशन प्रारंभ करें",
     cancelNavAction: "रद्द करें",
     facilitiesHeading: "स्टेशन की सुविधाएं",
-    facilitiesSub: "मैसूरु जंक्शन की सुविधाओं को देखें और सीधे मार्ग खोजें।",
+    facilitiesSub: "रामनगरम जंक्शन की सुविधाओं को देखें और सीधे मार्ग खोजें।",
     searchPlaceholder: "सुविधाएं खोजें (उदा. शौचालय, पेयजल)...",
     helpHeading: "यात्री सहायता का अनुरोध करें",
     helpFormDesc: "व्हीलचेयर या दृष्टि सहायता की आवश्यकता वाले यात्री यहां अनुरोध कर सकते हैं।",
@@ -304,7 +304,7 @@ const i18n = {
 };
 
 // --------------------------------------------------------------------------
-// 2. MYSURU JUNCTION STATION NODES & GRAPH (6 PLATFORMS & AMENITIES)
+// 2. RAMANAGARA JUNCTION STATION NODES & GRAPH (AMENITIES & PLATFORMS)
 // --------------------------------------------------------------------------
 const stationNodes = {
   entrance: { id: "entrance", names: { en: "Main Entrance / Exit Gate 🚪", kn: "ಮುಖ್ಯ ಪ್ರವೇಶದ್ವಾರ / ನಿರ್ಗಮನ ಗೇಟ್ 🚪", ta: "முதன்மை நுழைவாயில் 🚪", te: "ముఖ్య ద్వారం 🚪", ml: "പ്രധാന കവാടം 🚪", hi: "मुख्य प्रवेश / निकास द्वार 🚪" }, x: 500, y: 600, category: "transport" },
@@ -496,7 +496,7 @@ function findShortestRoute(startId, destId, options = {}) {
 // 5. MAIN INITIALIZATION & DOM READY HANDLER
 // --------------------------------------------------------------------------
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Initializing Mysuru Junction Smart Navigation app...");
+  console.log("Initializing Ramanagara Junction Smart Navigation app...");
 
   // Verify core required HTML elements
   const findButton = document.getElementById("btn-find-route");
@@ -524,7 +524,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // Apply initial translations
   updateLanguage(appState.currentLang);
 
-  console.log("Mysuru Junction Navigation script initialized successfully.");
+  console.log("Ramanagara Junction Navigation script initialized successfully.");
 });
 
 // --------------------------------------------------------------------------
@@ -1046,7 +1046,7 @@ function renderFacilitiesList(categoryFilter = "all", searchQuery = "") {
           <span class="facility-location-tag">${fac.category.toUpperCase()}</span>
         </div>
         <div class="facility-title">${name}</div>
-        <div class="facility-desc">Located within Mysuru Junction station layout. Click below to start route navigation.</div>
+        <div class="facility-desc">Located within Ramanagara Junction station layout. Click below to start route navigation.</div>
         <button class="btn btn-primary btn-sm btn-nav-facility" data-node-id="${fac.id}">
           ${i18n[appState.currentLang].navigateHere || "Navigate Here"}
         </button>

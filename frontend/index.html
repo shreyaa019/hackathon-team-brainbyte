@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Mysuru Junction Smart Navigation - Multilingual Indoor Station Guide</title>
-  <meta name="description" content="Accessible multilingual indoor navigation prototype for Mysuru Junction Railway Station (MYS), Karnataka. Supports English, Kannada, Tamil, Telugu, Malayalam, and Hindi.">
+  <title>Ramanagara Junction Smart Navigation - Multilingual Indoor Station Guide</title>
+  <meta name="description" content="Accessible multilingual indoor navigation prototype for Ramanagara Railway Station (RMGM), Karnataka. Supports English, Kannada, Tamil, Telugu, Malayalam, and Hindi.">
   <link rel="stylesheet" href="style.css">
   <!-- Google Fonts: Inter & Indian Scripts (Kannada, Tamil, Telugu, Malayalam, Devanagari) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +41,8 @@
           </svg>
         </div>
         <div class="brand-titles">
-          <h1 id="app-title">Mysuru Junction Smart Navigation</h1>
-          <span class="brand-sub" id="app-subtitle">Mysuru Junction (MYS) • Indian Railways</span>
+          <h1 id="app-title">Ramanagara Junction Smart Navigation</h1>
+          <span class="brand-sub" id="app-subtitle">Ramanagara Junction (RMGM) • Indian Railways</span>
         </div>
       </div>
 
@@ -113,9 +113,9 @@
       <div class="hero-card">
         <div class="hero-text">
           <div class="hero-badge">
-            <span aria-hidden="true">📍</span> <span id="hero-station-id">Mysuru Junction Railway Station (MYS)</span>
+            <span aria-hidden="true">📍</span> <span id="hero-station-id">Ramanagara Railway Station (RMGM)</span>
           </div>
-          <h2 id="home-heading">Welcome to Mysuru Junction Smart Navigation</h2>
+          <h2 id="home-heading">Welcome to Ramanagara Junction Smart Navigation</h2>
           <p id="hero-desc">
             An accessible indoor navigation portal helping all passengers—including users with physical, visual, or hearing disabilities—navigate between platforms, concourses, ticket counters, and station facilities.
           </p>
@@ -182,7 +182,7 @@
       <div class="info-card">
         <h3 id="title-conceptual-notice">About Station Map Data</h3>
         <p id="desc-conceptual-notice">
-          This prototype uses a simplified schematic representation based on the conceptual floor plan of Mysuru Junction. GPS signals and real-time indoor positioning are simulated; passengers can also manually select their current location.
+          This prototype uses a simplified schematic representation based on the conceptual floor plan of Ramanagara Junction (RMGM). GPS signals and real-time indoor positioning are simulated; passengers can also manually select their current location.
         </p>
       </div>
     </section>
@@ -278,7 +278,7 @@
             </div>
           </div>
 
-          <div class="map-viewport" id="map-viewport" tabindex="0" role="region" aria-label="Interactive Mysuru Station Map Viewport">
+          <div class="map-viewport" id="map-viewport" tabindex="0" role="region" aria-label="Interactive Ramanagara Station Map Viewport">
             <!-- Dynamic SVG Schematic Map -->
             <svg id="station-svg" viewBox="0 0 1000 680" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
               <defs>
@@ -455,7 +455,7 @@
     <section id="view-facilities" class="app-view" aria-labelledby="facilities-heading">
       <div class="facilities-header-card">
         <h2 id="facilities-heading">Station Facilities & Amenities</h2>
-        <p id="sub-facilities">Browse verified and demonstration amenities across Mysuru Junction. Select any facility to navigate directly to it.</p>
+        <p id="sub-facilities">Browse verified and demonstration amenities across Ramanagara Junction. Select any facility to navigate directly to it.</p>
 
         <!-- Search and Filter Bar -->
         <div class="facilities-filter-bar">
@@ -541,38 +541,38 @@
             <div class="contact-item">
               <div class="contact-icon">📞</div>
               <div class="contact-details">
-                <strong id="contact-1-title">Indian Railways National Helpline</strong>
-                <span class="contact-number">139</span>
-                <span class="contact-tag" id="tag-contact-1">24/7 Security & Medical Help</span>
+                <strong id="contact-1-title">Indian Railways Helpline — 139</strong>
+                <a href="tel:139" class="contact-number">139</a>
+                <span class="contact-tag" id="tag-contact-1">24/7 All-India Passenger Enquiries & Wheelchair Assistance</span>
               </div>
             </div>
 
             <div class="contact-item">
               <div class="contact-icon">♿</div>
               <div class="contact-details">
-                <strong id="contact-2-title">Divyangjan (Accessible) Assistance Desk</strong>
-                <span class="contact-number" id="contact-phone-demo">0821-2426800 (Demo Number)</span>
-                <span class="contact-tag" id="tag-demo-unverified">Requires On-Site Verification</span>
+                <strong id="contact-2-title">Divyangjan Accessible Assistance Desk</strong>
+                <a href="tel:139" class="contact-number">139 (Indian Railways Helpline)</a>
+                <span class="contact-tag" id="tag-demo-unverified">Official helpline for wheelchair & accessibility assistance enquiries</span>
               </div>
             </div>
 
             <div class="contact-item">
               <div class="contact-icon">🚉</div>
               <div class="contact-details">
-                <strong id="contact-3-title">Station Master Office (Mysuru Junction)</strong>
-                <span class="contact-number">Platform 1 Concourse</span>
-                <span class="contact-tag" id="tag-contact-3">General Administration</span>
+                <strong id="contact-3-title">Station Master Office — Ramanagara Railway Station</strong>
+                <a href="tel:08027271011" class="contact-number">080-27271011</a>
+                <span class="contact-tag" id="tag-contact-3">Platform 1 Station Building</span>
               </div>
             </div>
           </div>
 
           <div class="a11y-info-box">
-            <h4 id="title-a11y-amenities-mysuru">Accessibility Features at Mysuru Junction</h4>
+            <h4 id="title-a11y-amenities-mysuru">Accessibility Features at Ramanagara Railway Station</h4>
             <ul>
-              <li id="feat-1">✔️ Ramps at Main Entrance and Concourse</li>
-              <li id="feat-2">✔️ Lifts installed at West & East Foot Overbridges</li>
+              <li id="feat-1">✔️ Step-free Ramps at Main Entrance and Booking Office</li>
+              <li id="feat-2">✔️ Foot Overbridge (Stairs & Lifts) connecting Platforms 1, 2, 3 & 4</li>
               <li id="feat-3">✔️ Tactile floor guiding tiles in main concourse</li>
-              <li id="feat-4">✔️ Accessible washrooms near Concourse Hall</li>
+              <li id="feat-4">✔️ Divyang Accessible Restroom near Platform 1</li>
             </ul>
           </div>
         </div>
