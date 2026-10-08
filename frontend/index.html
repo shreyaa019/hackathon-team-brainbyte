@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-text-size="normal">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mysuru Junction Smart Navigation - Multilingual Indoor Station Guide</title>
+  <meta name="description" content="Accessible multilingual indoor navigation prototype for Mysuru Junction Railway Station (MYS), Karnataka. Supports English, Kannada, Tamil, Telugu, Malayalam, and Hindi.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Google Fonts: Inter & Indian Scripts (Kannada, Tamil, Telugu, Malayalam, Devanagari) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+Devanagari:wght@400;500;600;700&family=Noto+Sans+Kannada:wght@400;500;600;700&family=Noto+Sans+Malayalam:wght@400;500;600;700&family=Noto+Sans+Tamil:wght@400;500;600;700&family=Noto+Sans+Telugu:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Skip to Main Content Link for Accessibility -->
+  <a href="#main-content" class="skip-link" id="skip-to-content-link">Skip to main content</a>
+
+  <!-- Top Announcement / Disclaimer Header -->
+  <aside class="disclaimer-banner" role="region" aria-label="Station Disclaimer">
+    <div class="container disclaimer-content">
+      <span class="disclaimer-badge" id="disclaimer-badge-text">DEMO PROTOTYPE</span>
+      <p id="disclaimer-text">
+        Conceptual station map. Facility positions and routes require on-site verification.
+      </p>
+    </div>
+  </aside>
+
+  <!-- Global Application Header -->
+  <header class="app-header" role="banner">
+    <div class="container header-inner">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="4" y="3" width="16" height="14" rx="2"/>
+            <path d="M4 11h16"/>
+            <path d="M12 3v8"/>
+            <path d="M8 19l-2 3"/>
+            <path d="M16 19l2 3"/>
+            <circle cx="8" cy="15" r="1"/>
+            <circle cx="16" cy="15" r="1"/>
+          </svg>
+        </div>
+        <div class="brand-titles">
+          <h1 id="app-title">Mysuru Junction Smart Navigation</h1>
+          <span class="brand-sub" id="app-subtitle">Mysuru Junction (MYS) • Indian Railways</span>
+        </div>
+      </div>
+
+      <!-- Quick Accessibility & Multilingual Toolbar -->
+      <div class="header-tools" role="toolbar" aria-label="Accessibility and Language Controls">
+        <!-- Multilingual Language Selector (English, Kannada, Tamil, Telugu, Malayalam, Hindi) -->
+        <div class="tool-group">
+          <label for="lang-select" class="sr-only" id="label-lang-select">Select Language</label>
+          <select id="lang-select" class="tool-select" aria-label="Language Selector">
+            <option value="en">English</option>
+            <option value="kn">ಕನ್ನಡ (Kannada)</option>
+            <option value="ta">தமிழ் (Tamil)</option>
+            <option value="te">తెలుగు (Telugu)</option>
+            <option value="ml">മലയാളം (Malayalam)</option>
+            <option value="hi">हिंदी (Hindi)</option>
+          </select>
+        </div>
+
+        <!-- High Contrast Mode Toggle -->
+        <button id="btn-toggle-contrast" class="tool-btn" aria-pressed="false" aria-label="Toggle High Contrast Mode">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 2a10 10 0 0 0 0 20z" fill="currentColor"/></svg>
+          <span class="tool-label" id="label-contrast">Contrast</span>
+        </button>
+
+        <!-- Text Size Controls -->
+        <div class="tool-group text-size-group" aria-label="Text Size Controls">
+          <button id="btn-text-decrease" class="tool-btn-sm" aria-label="Decrease Text Size">A-</button>
+          <span id="current-text-size" class="text-size-indicator" aria-live="polite">100%</span>
+          <button id="btn-text-increase" class="tool-btn-sm" aria-label="Increase Text Size">A+</button>
+        </div>
+
+        <!-- Accessibility Settings Button -->
+        <button id="btn-open-a11y" class="tool-btn btn-a11y-primary" aria-label="Open Accessibility Settings Panel">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="4" r="2"/><path d="M12 6v6m0 0l-4 6m4-6l4 6M6 9h12"/></svg>
+          <span class="tool-label" id="label-a11y-panel">Accessibility</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation Tabs (Desktop & Tablet) -->
+  <nav class="desktop-nav" role="navigation" aria-label="Main Sections">
+    <div class="container nav-inner">
+      <button class="nav-tab active" data-target="view-home" id="tab-home">
+        <span class="nav-icon" aria-hidden="true">🏠</span>
+        <span id="tab-text-home">Home</span>
+      </button>
+      <button class="nav-tab" data-target="view-map" id="tab-map">
+        <span class="nav-icon" aria-hidden="true">🗺️</span>
+        <span id="tab-text-map">Navigation & Map</span>
+      </button>
+      <button class="nav-tab" data-target="view-facilities" id="tab-facilities">
+        <span class="nav-icon" aria-hidden="true">🚻</span>
+        <span id="tab-text-facilities">Nearby Facilities</span>
+      </button>
+      <button class="nav-tab" data-target="view-help" id="tab-help">
+        <span class="nav-icon" aria-hidden="true">🆘</span>
+        <span id="tab-text-help">Staff Assistance</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Main Content Container -->
+  <main id="main-content" class="container main-layout" role="main">
+
+    <!-- 1. HOME VIEW -->
+    <section id="view-home" class="app-view active" aria-labelledby="home-heading">
+      <div class="hero-card">
+        <div class="hero-text">
+          <div class="hero-badge">
+            <span aria-hidden="true">📍</span> <span id="hero-station-id">Mysuru Junction Railway Station (MYS)</span>
+          </div>
+          <h2 id="home-heading">Welcome to Mysuru Junction Smart Navigation</h2>
+          <p id="hero-desc">
+            An accessible indoor navigation portal helping all passengers—including users with physical, visual, or hearing disabilities—navigate between platforms, concourses, ticket counters, and station facilities.
+          </p>
+          <div class="hero-actions">
+            <button class="btn btn-primary btn-lg" id="btn-home-start-nav">
+              <span aria-hidden="true">🗺️</span> <span id="txt-home-start-nav">Start Navigation</span>
+            </button>
+            <button class="btn btn-secondary btn-lg" id="btn-home-facilities">
+              <span aria-hidden="true">🚻</span> <span id="txt-home-facilities">Find Nearby Facilities</span>
+            </button>
+            <button class="btn btn-outline btn-lg" id="btn-home-assistance">
+              <span aria-hidden="true">🆘</span> <span id="txt-home-assistance">Get Staff Assistance</span>
+            </button>
+          </div>
+        </div>
+        <div class="hero-graphic" aria-hidden="true">
+          <div class="schematic-preview">
+            <div class="preview-platform p1">Platform 1 (Side)</div>
+            <div class="preview-track"></div>
+            <div class="preview-platform p2">Platform 2 & 3 (Island)</div>
+            <div class="preview-track"></div>
+            <div class="preview-platform p4">Platform 4 & 5 (Island)</div>
+            <div class="preview-track"></div>
+            <div class="preview-platform p6">Platform 6 (Concourse)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Navigation Profiles / Assistance Modes Selector -->
+      <h3 class="section-title" id="title-assistance-modes">Choose Assistance Mode</h3>
+      <p class="section-subtitle" id="sub-assistance-modes">Tailor directions to your specific mobility or sensory preference.</p>
+
+      <div class="modes-grid" role="radiogroup" aria-label="Assistance Profile Selection">
+        <div class="mode-card active" data-mode="general" tabindex="0" role="radio" aria-checked="true">
+          <div class="mode-icon">🚆</div>
+          <h4 id="mode-title-general">General Passenger Mode</h4>
+          <p id="mode-desc-general">Standard indoor station map, route highlighting, estimated walk times, and step-by-step guidance.</p>
+          <span class="mode-badge" id="badge-general">Active</span>
+        </div>
+
+        <div class="mode-card" data-mode="wheelchair" tabindex="0" role="radio" aria-checked="false">
+          <div class="mode-icon">♿</div>
+          <h4 id="mode-title-wheelchair">Wheelchair Accessible</h4>
+          <p id="mode-desc-wheelchair">Step-free routes using verified ramps and lifts. Automatically avoids all stairs and escalators.</p>
+          <span class="mode-badge" id="badge-wheelchair">Select</span>
+        </div>
+
+        <div class="mode-card" data-mode="visual" tabindex="0" role="radio" aria-checked="false">
+          <div class="mode-icon">👁️</div>
+          <h4 id="mode-title-visual">Visual Assistance Mode</h4>
+          <p id="mode-desc-visual">Screen-reader optimized, high contrast, Web Speech voice navigation, large touch controls, and spoken updates.</p>
+          <span class="mode-badge" id="badge-visual">Select</span>
+        </div>
+
+        <div class="mode-card" data-mode="hearing" tabindex="0" role="radio" aria-checked="false">
+          <div class="mode-icon">👂</div>
+          <h4 id="mode-title-hearing">Hearing Assistance Mode</h4>
+          <p id="mode-desc-hearing">Visual-first step directions, high visibility alerts, visual cues, and silent staff request triggers.</p>
+          <span class="mode-badge" id="badge-hearing">Select</span>
+        </div>
+      </div>
+
+      <!-- Station Conceptual Map Overview Info -->
+      <div class="info-card">
+        <h3 id="title-conceptual-notice">About Station Map Data</h3>
+        <p id="desc-conceptual-notice">
+          This prototype uses a simplified schematic representation based on the conceptual floor plan of Mysuru Junction. GPS signals and real-time indoor positioning are simulated; passengers can also manually select their current location.
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. ROUTE & MAP VIEW -->
+    <section id="view-map" class="app-view" aria-labelledby="map-heading">
+      <!-- Route Selection Form Bar -->
+      <div class="route-panel-card">
+        <div class="panel-header">
+          <h2 id="map-heading" class="panel-title">Route Finder & Map</h2>
+          <div class="panel-header-actions">
+            <button type="button" id="btn-open-blockage-modal" class="btn btn-sm btn-warning">
+              <span aria-hidden="true">⚠️</span> <span id="txt-btn-report-blockage">Report Blockage</span>
+            </button>
+            <span class="status-chip" id="chip-mode-indicator">General Mode</span>
+          </div>
+        </div>
+
+        <!-- Active Blockage / Reroute Notification Alert Banner -->
+        <div id="blockage-alert-banner" class="alert-banner-warning hidden" role="alert">
+          <strong id="txt-blockage-alert-title">⚠️ Pathway Blockage Reported</strong>
+          <p id="txt-blockage-alert-desc">West FOB Lift is currently blocked. Rerouting via East FOB Lift.</p>
+        </div>
+
+        <form id="route-form" class="route-form" onsubmit="return false;">
+          <div class="inputs-row">
+            <!-- Starting Location with GPS Assist Button -->
+            <div class="field-group">
+              <div class="label-row">
+                <label for="select-start" id="label-start-point">Starting Point (Current Location)</label>
+                <button type="button" id="btn-gps-locate" class="btn-text-action" aria-label="Simulate GPS Indoor Locate">
+                  <span>📡</span> <span id="txt-gps-locate">Locate Me (GPS)</span>
+                </button>
+              </div>
+              <div class="select-wrapper">
+                <span class="field-icon" aria-hidden="true">📍</span>
+                <select id="select-start" class="form-control" aria-required="true">
+                  <!-- Filled dynamically by JS -->
+                </select>
+              </div>
+            </div>
+
+            <!-- Swap Locations Button -->
+            <button type="button" id="btn-swap-locations" class="btn-swap" aria-label="Swap Starting Point and Destination">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M7 16V4M7 4L3 8M7 4l4 4M17 8v12M17 20l4-4M17 20l-4-4"/></svg>
+            </button>
+
+            <!-- Destination Location -->
+            <div class="field-group">
+              <label for="select-dest" id="label-dest-point">Destination</label>
+              <div class="select-wrapper">
+                <span class="field-icon" aria-hidden="true">🏁</span>
+                <select id="select-dest" class="form-control" aria-required="true">
+                  <!-- Filled dynamically by JS -->
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <!-- Accessibility Routing Preferences Checkboxes -->
+          <div class="routing-options-row">
+            <label class="checkbox-label" for="chk-wheelchair">
+              <input type="checkbox" id="chk-wheelchair">
+              <span class="custom-chk"></span>
+              <span id="lbl-chk-wheelchair">Wheelchair Accessible Route (Lifts & Ramps only)</span>
+            </label>
+
+            <label class="checkbox-label" for="chk-no-stairs">
+              <input type="checkbox" id="chk-no-stairs">
+              <span class="custom-chk"></span>
+              <span id="lbl-chk-no-stairs">Avoid Stairs (No stair climbing)</span>
+            </label>
+
+            <button type="submit" id="btn-find-route" class="btn btn-primary">
+              <span aria-hidden="true">🔍</span> <span id="txt-find-route">Find Route</span>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- Split View Layout: Interactive Map + Directions Box -->
+      <div class="map-and-directions-container">
+
+        <!-- Interactive Map Column -->
+        <div class="map-column">
+          <div class="map-header">
+            <h3 id="title-station-layout">Interactive Station Schematic</h3>
+            <!-- Zoom Controls -->
+            <div class="map-controls" role="toolbar" aria-label="Map Navigation Controls">
+              <button id="btn-map-zoom-in" class="btn-map-ctrl" aria-label="Zoom In Map">+</button>
+              <button id="btn-map-zoom-out" class="btn-map-ctrl" aria-label="Zoom Out Map">-</button>
+              <button id="btn-map-reset" class="btn-map-ctrl" aria-label="Reset Map View">Reset</button>
+            </div>
+          </div>
+
+          <div class="map-viewport" id="map-viewport" tabindex="0" role="region" aria-label="Interactive Mysuru Station Map Viewport">
+            <!-- Dynamic SVG Schematic Map -->
+            <svg id="station-svg" viewBox="0 0 1000 680" preserveAspectRatio="xMidYMid meet" xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <!-- Arrow Marker for Route -->
+                <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+                  <path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb" />
+                </marker>
+                <!-- Glow Effect Filter -->
+                <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="3" result="blur" />
+                  <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
+              </defs>
+
+              <g id="map-zoom-group">
+                <!-- Background Base -->
+                <rect x="20" y="20" width="960" height="640" rx="16" fill="var(--map-bg)" stroke="var(--border-color)" stroke-width="2"/>
+
+                <!-- Railway Tracks Schematic -->
+                <g class="map-tracks" stroke="var(--track-color)" stroke-width="3">
+                  <line x1="60" y1="120" x2="940" y2="120" stroke-dasharray="8,6"/>
+                  <line x1="60" y1="180" x2="940" y2="180" stroke-dasharray="8,6"/>
+                  <line x1="60" y1="240" x2="940" y2="240" stroke-dasharray="8,6"/>
+                  <line x1="60" y1="300" x2="940" y2="300" stroke-dasharray="8,6"/>
+                  <line x1="60" y1="360" x2="940" y2="360" stroke-dasharray="8,6"/>
+                </g>
+
+                <!-- Platforms Shapes -->
+                <g class="map-platforms">
+                  <rect x="100" y="55" width="800" height="35" rx="6" class="plat-rect" id="rect-p1"/>
+                  <text x="500" y="77" class="plat-label">Platform 1 (Side Platform - Towards Bengaluru / Chennai)</text>
+
+                  <rect x="100" y="135" width="800" height="30" rx="6" class="plat-rect" id="rect-p2"/>
+                  <text x="300" y="155" class="plat-label">Platform 2</text>
+                  <text x="700" y="155" class="plat-label">Platform 3</text>
+
+                  <rect x="100" y="255" width="800" height="30" rx="6" class="plat-rect" id="rect-p4"/>
+                  <text x="300" y="275" class="plat-label">Platform 4</text>
+                  <text x="700" y="275" class="plat-label">Platform 5</text>
+
+                  <rect x="100" y="375" width="800" height="35" rx="6" class="plat-rect" id="rect-p6"/>
+                  <text x="500" y="397" class="plat-label">Platform 6 (Side Platform)</text>
+                </g>
+
+                <!-- Foot Overbridges (FOBs) -->
+                <g class="map-fobs">
+                  <rect x="180" y="60" width="60" height="360" rx="4" class="fob-rect" />
+                  <text x="210" y="210" class="fob-label" transform="rotate(-90 210 210)">West FOB 1 (Stairs & Lift)</text>
+
+                  <rect x="760" y="60" width="60" height="360" rx="4" class="fob-rect" />
+                  <text x="790" y="210" class="fob-label" transform="rotate(-90 790 210)">East FOB 2 (Escalator & Lift)</text>
+                </g>
+
+                <!-- Station Building / Concourse Block -->
+                <g class="map-concourse">
+                  <rect x="100" y="440" width="800" height="180" rx="12" class="concourse-rect"/>
+                  <text x="500" y="465" class="concourse-title">STATION BUILDING & MAIN CONCOURSE</text>
+
+                  <rect x="110" y="480" width="90" height="120" rx="6" class="room-rect"/>
+                  <text x="155" y="540" class="room-label">Parking (West)</text>
+
+                  <rect x="210" y="480" width="130" height="70" rx="6" class="room-rect"/>
+                  <text x="275" y="515" class="room-label">Ticket Counters</text>
+                  <text x="275" y="535" class="room-icon">🎫♿</text>
+
+                  <rect x="350" y="480" width="130" height="70" rx="6" class="room-rect"/>
+                  <text x="415" y="515" class="room-label">Help Desk / Enquiry</text>
+                  <text x="415" y="535" class="room-icon">ℹ️👁️</text>
+
+                  <rect x="490" y="480" width="130" height="70" rx="6" class="room-rect"/>
+                  <text x="555" y="515" class="room-label">Waiting Hall</text>
+                  <text x="555" y="535" class="room-icon">🪑</text>
+
+                  <rect x="630" y="480" width="150" height="70" rx="6" class="room-rect"/>
+                  <text x="705" y="510" class="room-label">Toilets & Water</text>
+                  <text x="705" y="535" class="room-icon">🚻🚰👂</text>
+
+                  <rect x="790" y="480" width="90" height="120" rx="6" class="room-rect"/>
+                  <text x="835" y="540" class="room-label">Parking (East)</text>
+
+                  <rect x="420" y="580" width="160" height="35" rx="6" class="gate-rect"/>
+                  <text x="500" y="602" class="gate-label">MAIN ENTRANCE / EXIT 🚪</text>
+                </g>
+
+                <!-- Dynamic Route Layer (Edges rendered here by JS) -->
+                <g id="svg-edges-layer"></g>
+
+                <!-- Dynamic Calculated Route Highlight Layer -->
+                <g id="svg-route-layer"></g>
+
+                <!-- Interactive Nodes Layer (Circles rendered here by JS) -->
+                <g id="svg-nodes-layer"></g>
+              </g>
+            </svg>
+
+            <!-- Node Selection Popup / Context Menu -->
+            <div id="node-popup" class="node-popup hidden" role="dialog" aria-label="Location Actions">
+              <h4 id="popup-node-title">Location Name</h4>
+              <p id="popup-node-desc" class="popup-desc">Subtext info</p>
+              <div class="popup-buttons">
+                <button id="btn-popup-set-start" class="btn btn-sm btn-primary">Set as Start</button>
+                <button id="btn-popup-set-dest" class="btn btn-sm btn-secondary">Set as Destination</button>
+              </div>
+              <button id="btn-popup-close" class="popup-close-btn" aria-label="Close popup">×</button>
+            </div>
+          </div>
+          <p class="map-help-text" id="map-help-hint">💡 Tip: Click any marked node on the map to set it as your Starting Point or Destination.</p>
+        </div>
+
+        <!-- Route Directions & Navigation Column -->
+        <div class="directions-column">
+          <!-- Step-by-Step Directions Card -->
+          <div class="directions-card" id="directions-card">
+            <div class="dir-header">
+              <h3 id="title-route-directions">Route Directions</h3>
+              <div class="dir-meta">
+                <span id="route-distance-tag" class="meta-tag">-- m</span>
+                <span id="route-time-tag" class="meta-tag">-- mins</span>
+              </div>
+            </div>
+
+            <!-- Speech Audio Controls for Visual Mode -->
+            <div id="speech-toolbar" class="speech-toolbar hidden" role="region" aria-label="Audio Guidance Controls">
+              <button id="btn-speech-read-step" class="btn-speech">
+                <span aria-hidden="true">🔊</span> <span id="txt-speech-read">Speak Instruction</span>
+              </button>
+              <button id="btn-speech-read-dest" class="btn-speech-sub">
+                <span aria-hidden="true">🏁</span> <span id="txt-speech-dest">Read Destination</span>
+              </button>
+            </div>
+
+            <!-- Active Navigation Banner -->
+            <div id="nav-active-status" class="nav-status-banner hidden">
+              <span class="pulse-dot"></span>
+              <span id="txt-nav-status">Navigation Active</span>
+            </div>
+
+            <!-- Route Steps Container -->
+            <div id="steps-container" class="steps-container" role="list">
+              <div class="empty-steps-state">
+                <div class="empty-icon">🗺️</div>
+                <h4 id="txt-empty-steps-title">No Route Selected</h4>
+                <p id="txt-empty-steps-desc">Select a starting point and destination above, then click "Find Route" to calculate step-by-step directions.</p>
+              </div>
+            </div>
+
+            <!-- Step Navigation Controls -->
+            <div id="step-nav-controls" class="step-nav-controls hidden">
+              <button id="btn-prev-step" class="btn btn-secondary" disabled>
+                <span aria-hidden="true">⬅️</span> <span id="txt-prev-step">Previous Step</span>
+              </button>
+              <span id="step-counter" class="step-counter">Step 1 of 1</span>
+              <button id="btn-next-step" class="btn btn-secondary">
+                <span id="txt-next-step">Next Step</span> <span aria-hidden="true">➡️</span>
+              </button>
+            </div>
+
+            <!-- Start / Cancel Navigation Action Buttons -->
+            <div id="nav-action-buttons" class="nav-action-buttons hidden">
+              <button id="btn-start-nav" class="btn btn-success btn-lg">
+                <span aria-hidden="true">▶️</span> <span id="txt-start-nav-action">Start Navigation</span>
+              </button>
+              <button id="btn-cancel-nav" class="btn btn-danger btn-lg hidden">
+                <span aria-hidden="true">⏹️</span> <span id="txt-cancel-nav-action">Cancel Navigation</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- 3. NEARBY FACILITIES VIEW -->
+    <section id="view-facilities" class="app-view" aria-labelledby="facilities-heading">
+      <div class="facilities-header-card">
+        <h2 id="facilities-heading">Station Facilities & Amenities</h2>
+        <p id="sub-facilities">Browse verified and demonstration amenities across Mysuru Junction. Select any facility to navigate directly to it.</p>
+
+        <!-- Search and Filter Bar -->
+        <div class="facilities-filter-bar">
+          <div class="search-box">
+            <span class="search-icon" aria-hidden="true">🔍</span>
+            <input type="text" id="facility-search-input" placeholder="Search facilities (e.g., Washroom, Water, Ticket)..." aria-label="Search station facilities">
+          </div>
+
+          <div class="category-pills" role="tablist" aria-label="Facility Categories">
+            <button class="cat-pill active" data-category="all" role="tab" aria-selected="true" id="cat-all">All</button>
+            <button class="cat-pill" data-category="washroom" role="tab" aria-selected="false" id="cat-washrooms">Washrooms</button>
+            <button class="cat-pill" data-category="water" role="tab" aria-selected="false" id="cat-water">Drinking Water</button>
+            <button class="cat-pill" data-category="services" role="tab" aria-selected="false" id="cat-services">Tickets & Help Desk</button>
+            <button class="cat-pill" data-category="waiting" role="tab" aria-selected="false" id="cat-waiting">Waiting Areas</button>
+            <button class="cat-pill" data-category="platforms" role="tab" aria-selected="false" id="cat-platforms">Platforms (1-6)</button>
+            <button class="cat-pill" data-category="transport" role="tab" aria-selected="false" id="cat-transport">Parking & Exits</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Facility Cards Grid -->
+      <div id="facilities-grid" class="facilities-grid" role="region" aria-label="Station Facilities List">
+        <!-- Rendered dynamically by JS -->
+      </div>
+    </section>
+
+    <!-- 4. STAFF ASSISTANCE & HELP VIEW -->
+    <section id="view-help" class="app-view" aria-labelledby="help-heading">
+      <div class="help-grid">
+
+        <!-- Assistance Request Form Card -->
+        <div class="card help-card">
+          <div class="card-header">
+            <span class="card-badge-icon">🆘</span>
+            <h2 id="help-heading" class="card-title">Request Passenger Assistance</h2>
+          </div>
+          <p id="desc-help-form">
+            Passengers requiring wheelchair escort, visual assistance, or general station support can request immediate help here.
+          </p>
+
+          <form id="assistance-form" onsubmit="return false;">
+            <div class="field-group">
+              <label for="select-help-type" id="lbl-help-type">Assistance Required</label>
+              <select id="select-help-type" class="form-control" required>
+                <option value="wheelchair" id="opt-help-wheelchair">Wheelchair & Step-Free Escort</option>
+                <option value="visual" id="opt-help-visual">Visual Guidance & Navigation Help</option>
+                <option value="hearing" id="opt-help-hearing">Hearing & Sign Language Support</option>
+                <option value="luggage" id="opt-help-luggage">Luggage / Coolie Assistance</option>
+                <option value="general" id="opt-help-general">General Direction Guidance</option>
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="select-help-location" id="lbl-help-location">Your Current Location inside Station</label>
+              <select id="select-help-location" class="form-control" required>
+                <!-- Filled dynamically by JS -->
+              </select>
+            </div>
+
+            <div class="field-group">
+              <label for="txt-help-details" id="lbl-help-details">Additional Details / Special Needs</label>
+              <textarea id="txt-help-details" class="form-control" rows="3" placeholder="Specify platform number, train number, or specific assistance required..."></textarea>
+            </div>
+
+            <button type="submit" id="btn-submit-help" class="btn btn-primary btn-block btn-lg">
+              <span aria-hidden="true">📨</span> <span id="txt-submit-help">Submit Assistance Request</span>
+            </button>
+          </form>
+          <p class="form-note" id="note-help-prototype">
+            ⚠️ Prototype Note: Assistance requests are stored locally in your browser session and are not yet transmitted to actual Indian Railways staff.
+          </p>
+        </div>
+
+        <!-- Official Contact Details & Emergency Information Card -->
+        <div class="card contact-card">
+          <div class="card-header">
+            <span class="card-badge-icon">📞</span>
+            <h3 id="title-railway-contacts">Station Helplines & Contacts</h3>
+          </div>
+          <p id="desc-railway-contacts">Verified Indian Railways helpline numbers and station contact information.</p>
+
+          <div class="contact-list">
+            <div class="contact-item">
+              <div class="contact-icon">📞</div>
+              <div class="contact-details">
+                <strong id="contact-1-title">Indian Railways National Helpline</strong>
+                <span class="contact-number">139</span>
+                <span class="contact-tag" id="tag-contact-1">24/7 Security & Medical Help</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">♿</div>
+              <div class="contact-details">
+                <strong id="contact-2-title">Divyangjan (Accessible) Assistance Desk</strong>
+                <span class="contact-number" id="contact-phone-demo">0821-2426800 (Demo Number)</span>
+                <span class="contact-tag" id="tag-demo-unverified">Requires On-Site Verification</span>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <div class="contact-icon">🚉</div>
+              <div class="contact-details">
+                <strong id="contact-3-title">Station Master Office (Mysuru Junction)</strong>
+                <span class="contact-number">Platform 1 Concourse</span>
+                <span class="contact-tag" id="tag-contact-3">General Administration</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="a11y-info-box">
+            <h4 id="title-a11y-amenities-mysuru">Accessibility Features at Mysuru Junction</h4>
+            <ul>
+              <li id="feat-1">✔️ Ramps at Main Entrance and Concourse</li>
+              <li id="feat-2">✔️ Lifts installed at West & East Foot Overbridges</li>
+              <li id="feat-3">✔️ Tactile floor guiding tiles in main concourse</li>
+              <li id="feat-4">✔️ Accessible washrooms near Concourse Hall</li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav" role="navigation" aria-label="Mobile Navigation Bar">
+    <button class="mobile-nav-btn active" data-target="view-home" id="mob-tab-home">
+      <span class="mob-icon" aria-hidden="true">🏠</span>
+      <span id="mob-txt-home">Home</span>
+    </button>
+    <button class="mobile-nav-btn" data-target="view-map" id="mob-tab-map">
+      <span class="mob-icon" aria-hidden="true">🗺️</span>
+      <span id="mob-txt-map">Map</span>
+    </button>
+    <button class="mobile-nav-btn" data-target="view-facilities" id="mob-tab-facilities">
+      <span class="mob-icon" aria-hidden="true">🚻</span>
+      <span id="mob-txt-facilities">Facilities</span>
+    </button>
+    <button class="mobile-nav-btn" data-target="view-help" id="mob-tab-help">
+      <span class="mob-icon" aria-hidden="true">🆘</span>
+      <span id="mob-txt-help">Help</span>
+    </button>
+  </nav>
+
+  <!-- Accessibility Settings Dialog / Modal -->
+  <div id="modal-a11y" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-a11y-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-a11y-title">♿ Accessibility & Preference Center</h3>
+        <button id="btn-close-a11y" class="modal-close-btn" aria-label="Close settings">×</button>
+      </div>
+
+      <div class="modal-body">
+        <!-- High Contrast Mode -->
+        <div class="setting-row">
+          <div class="setting-info">
+            <strong id="set-contrast-title">High Contrast Mode</strong>
+            <p id="set-contrast-desc">Optimizes colors with dark background and vibrant yellow/amber indicators for high visibility.</p>
+          </div>
+          <button id="btn-modal-contrast-toggle" class="toggle-switch" aria-pressed="false">
+            <span class="switch-handle"></span>
+          </button>
+        </div>
+
+        <!-- Text Size -->
+        <div class="setting-row">
+          <div class="setting-info">
+            <strong id="set-text-title">Text Size Adjustment</strong>
+            <p id="set-text-desc">Increase font size for improved readability across all screens.</p>
+          </div>
+          <div class="text-size-buttons">
+            <button class="btn-size-choice" data-size="normal" id="size-btn-normal">Normal</button>
+            <button class="btn-size-choice" data-size="large" id="size-btn-large">Large</button>
+            <button class="btn-size-choice" data-size="xlarge" id="size-btn-xlarge">Extra Large</button>
+          </div>
+        </div>
+
+        <!-- Speech Synthesis Voice Guide -->
+        <div class="setting-row">
+          <div class="setting-info">
+            <strong id="set-tts-title">Text-to-Speech Voice Guide</strong>
+            <p id="set-tts-desc">Enable automatic browser voice announcements when navigating step-by-step.</p>
+          </div>
+          <button id="btn-modal-tts-toggle" class="toggle-switch" aria-pressed="false">
+            <span class="switch-handle"></span>
+          </button>
+        </div>
+
+        <!-- Reduced Motion -->
+        <div class="setting-row">
+          <div class="setting-info">
+            <strong id="set-motion-title">Reduced Animations</strong>
+            <p id="set-motion-desc">Minimizes smooth scrolling and pulsing route animations.</p>
+          </div>
+          <button id="btn-modal-motion-toggle" class="toggle-switch" aria-pressed="false">
+            <span class="switch-handle"></span>
+          </button>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="btn-save-a11y" class="btn btn-primary btn-block">Save Preferences</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Blockage / Obstacle Reporting Dialog Modal -->
+  <div id="modal-report-blockage" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-blockage-title">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="modal-blockage-title">⚠️ Report Pathway Blockage / Obstacle</h3>
+        <button id="btn-close-blockage-modal" class="modal-close-btn" aria-label="Close blockage reporting dialog">×</button>
+      </div>
+      <div class="modal-body">
+        <p id="desc-blockage-modal">Report temporary maintenance, wet floors, elevator outages, or crowded obstacles to automatically reroute passengers.</p>
+        
+        <form id="form-report-blockage" onsubmit="return false;">
+          <div class="field-group">
+            <label for="select-blockage-node" id="lbl-blockage-node">Select Blocked Location / Pathway</label>
+            <select id="select-blockage-node" class="form-control" required>
+              <!-- Filled dynamically by JS -->
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label for="select-blockage-type" id="lbl-blockage-type">Blockage / Hazard Type</label>
+            <select id="select-blockage-type" class="form-control" required>
+              <option value="lift_down" id="opt-blk-lift">Elevator Out of Service / Maintenance</option>
+              <option value="stairs_closed" id="opt-blk-stairs">Stairs Closed for Repairs</option>
+              <option value="crowded" id="opt-blk-crowded">Overcrowded Corridor / Temporary Obstacle</option>
+              <option value="cleaning" id="opt-blk-cleaning">Wet Floor / Cleaning in Progress</option>
+            </select>
+          </div>
+
+          <button type="submit" id="btn-submit-blockage" class="btn btn-warning btn-block btn-lg mt-3">
+            <span aria-hidden="true">🚨</span> <span id="txt-submit-blockage">Submit Report & Auto-Reroute</span>
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Demo Assistance Request Confirmation Dialog -->
+  <div id="modal-request-confirm" class="modal-overlay hidden" role="dialog" aria-modal="true" aria-labelledby="modal-req-title">
+    <div class="modal-content text-center">
+      <div class="confirm-icon">✅</div>
+      <h3 id="modal-req-title">Assistance Request Logged</h3>
+      <p id="modal-req-desc">
+        Your request for assistance at your location has been recorded in the local application state.
+      </p>
+      <div class="alert-banner-warning">
+        <strong id="title-demo-alert">PROTOTYPE DEMONSTRATION NOTICE</strong>
+        <p id="desc-demo-alert">This request has NOT been transmitted to live station personnel. In case of real emergencies, please call 139 or contact the Station Master's office directly.</p>
+      </div>
+      <button id="btn-close-req-confirm" class="btn btn-primary btn-lg mt-3">OK, Understood</button>
+    </div>
+  </div>
+
+  <!-- Main JavaScript File -->
+  <script src="script.js"></script>
+</body>
+</html>
